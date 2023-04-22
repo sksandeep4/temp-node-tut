@@ -1,21 +1,46 @@
+// const names = require("./n.js");
+// const say = require("./m.js");
+// setInterval(() => {
+//   say.sayHello(names.peta);
+// }, 2000);
+// console.log(__dirname);
+
 const http = require("http");
-const server = http.createServer((req, res) => {
-  if (req.url === "/") {
-    res.end("Welcome to NHK");
-    return;
-  }
-  if (req.url === "/about") {
-    res.end("About Page");
-    return;
-  }
-  res.setHeader("Content-Type", "text/html");
-  res.end(`
-    <h2>Error</h2>
-    <h4>Page not found!</h4>
-    <a href = '/'>Back Home</a>`);
-  return;
-});
-server.listen(5000);
+http
+  .createServer((req, res) => {
+    if (req.url == "/") {
+      res.setHeader("Content-type", "text/html");
+      res.write(
+        `<h3>Welcome I am not Michael Reeves</h3><h4><a href = '/about'>Who Am I<a> then?</h4>`
+      );
+      res.end();
+    }
+    if (req.url == "/about") {
+      res.setHeader("Content-type", "text/html");
+      res.write("<h4>I will be as good as or better than him</h4>");
+      res.end();
+    }
+  })
+  .listen(5000);
+
+// const http = require("http");
+// const server = http.createServer((req, res) => {
+//   if (req.url === "/") {
+//     res.end("Welcome to NHK");
+//     return;
+//   }
+//   if (req.url === "/about") {
+//     res.end("About");
+//     return;
+//   }
+//   res.setHeader("Content-Type", "text/html");
+//   res.end(`
+//     <h2>Error</h2>
+//     <h4>Page not found!</h4>
+//     <a href = '/'>Back Home</a>`);
+//   return;
+// });
+// server.listen(5000);
 
 // const amount = 8;
 // let i = 0;
@@ -89,3 +114,5 @@ server.listen(5000);
 //     );
 //   });
 // });
+
+//modules
